@@ -1,0 +1,14 @@
+# 统一换行符：仓库内一律 LF，检出时不做平台转换。
+# 目的：Windows 上 CRLF 会让 shell 脚本与某些文本比对出现莫名其妙的差异，
+# 而"可复现"要求第三方 clone 到的字节与本仓库一致。
+* text=auto eol=lf
+
+# 二进制产物不做任何转换
+*.pt binary
+*.pth binary
+*.ckpt binary
+*.png binary
+*.jpg binary
+
+# 语料是纯文本但必须保持原样（莎士比亚原文含特定换行）
+data/*.txt -text
