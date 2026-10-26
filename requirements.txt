@@ -1,0 +1,13 @@
+# AETHER-Ω 依赖清单
+# 设计原则：零重写。全部站在世界顶级现成成果之上，依赖收敛到极致。
+#
+# torch  —— 唯一硬依赖。世界级张量/自动微分/算子底座（Meta PyTorch Team）。
+#           我们不重造矩阵乘、卷积、autograd、优化器内核，直接在 PyTorch 之上做组合与超越。
+# CPU 安装：pip install torch --index-url https://download.pytorch.org/whl/cpu
+# GPU 安装：pip install torch --index-url https://download.pytorch.org/whl/cu128
+
+torch>=2.8.0
+
+# 以下均为可选（默认不启用，装了才生效）
+# numpy>=1.26        # 仅 verify/ 交叉验证脚本可选使用
+# pytest>=8.0        # 仅 tests/ 使用

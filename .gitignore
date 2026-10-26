@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# 训练产物（可复现，无需入库）
+checkpoints/
+runs/
+logs/
+*.pt
+*.pth
+*.ckpt
+
+# 数据集已随仓库发布（Tiny Shakespeare，公共领域文本，1.1MB）
+# 目的：让第三方 clone 后无需联网即可完整复现。
+# 如需重新拉取：python scripts/download_data.py --force
+data/*.bin
+
+# 证书报告产物
+certificates/*.json
+!certificates/.gitkeep
+
+.DS_Store
+Thumbs.db
+*.swp

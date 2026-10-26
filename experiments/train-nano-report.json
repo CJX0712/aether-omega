@@ -1,0 +1,143 @@
+{
+  "elapsed_sec": 280.06,
+  "steps_per_sec": 0.071,
+  "final_val_loss": 4.834353065490722,
+  "final_perplexity": 125.75720021236992,
+  "weight_fingerprint": "1cfc40b69612d4ae",
+  "n_clip_events": 0,
+  "history": [
+    {
+      "grad_norm": 0.0,
+      "moe_max_load_ratio": 2.0536081044750225,
+      "moe_expert_util": 0.96875,
+      "step": 0,
+      "train_loss": 6.242392063140869,
+      "lr_scale": 0.01,
+      "val_loss": 6.224858522415161
+    },
+    {
+      "grad_norm": 0.0,
+      "moe_max_load_ratio": 2.2143563250690494,
+      "moe_expert_util": 0.96875,
+      "step": 5,
+      "train_loss": 30.55386972427368,
+      "lr_scale": 0.06
+    },
+    {
+      "grad_norm": 0.0,
+      "moe_max_load_ratio": 2.66468725605438,
+      "moe_expert_util": 0.9375,
+      "step": 10,
+      "train_loss": 28.184494972229004,
+      "lr_scale": 0.11,
+      "val_loss": 5.322849750518799
+    },
+    {
+      "grad_norm": 0.0,
+      "moe_max_load_ratio": 3.3471550818603193,
+      "moe_expert_util": 0.90625,
+      "step": 15,
+      "train_loss": 25.76952028274536,
+      "lr_scale": 0.16
+    },
+    {
+      "grad_norm": 0.0,
+      "moe_max_load_ratio": 3.6375707980607204,
+      "moe_expert_util": 0.84375,
+      "step": 19,
+      "train_loss": null,
+      "lr_scale": 0.2,
+      "val_loss": 4.834353065490722
+    }
+  ],
+  "config": {
+    "model": {
+      "vocab_size": 256,
+      "dim": 256,
+      "n_layers": 8,
+      "max_seq_len": 512,
+      "dropout": 0.0,
+      "n_heads": 8,
+      "q_lora_rank": 64,
+      "kv_lora_rank": 32,
+      "qk_nope_head_dim": 32,
+      "qk_rope_head_dim": 16,
+      "v_head_dim": 32,
+      "local_window": 128,
+      "global_every": 4,
+      "n_routed_experts": 8,
+      "n_shared_experts": 1,
+      "n_activated_experts": 2,
+      "moe_intermediate_size": 128,
+      "first_moe_layer": 4,
+      "moe_layer_pattern": 1,
+      "ffn_hidden_size": 512,
+      "rms_norm_eps": 1e-06,
+      "use_qk_norm": true,
+      "qk_norm_clip": 64.0,
+      "rope_theta": 10000.0,
+      "yarn_scale": 1.0,
+      "yarn_original_max_pos": 512,
+      "mtp_depth": 1,
+      "mtp_loss_weight": 0.1,
+      "tie_embeddings": true
+    },
+    "optim": {
+      "lr_muon": 0.02,
+      "lr_adamw": 0.0003,
+      "weight_decay": 0.01,
+      "muon_momentum": 0.95,
+      "betas": [
+        0.9,
+        0.95
+      ],
+      "eps": 1e-08,
+      "ns_steps": 5,
+      "use_gram_ns": true,
+      "gram_reset_interval": 32,
+      "ns_eps": 1e-07,
+      "use_muon_clip": true,
+      "qk_clip_threshold": 64.0,
+      "warmup_steps": 100,
+      "min_lr_ratio": 0.1,
+      "grad_clip": 1.0
+    },
+    "train": {
+      "batch_size": 8,
+      "grad_accum_steps": 2,
+      "max_steps": 20,
+      "eval_every": 10,
+      "eval_iters": 20,
+      "log_every": 5,
+      "seed": 1337,
+      "threads": 16,
+      "device": "cpu",
+      "dtype": "float32",
+      "checkpoint_dir": "checkpoints",
+      "sample_every": 300,
+      "sample_tokens": 200
+    }
+  },
+  "dataset": {
+    "train_tokens": 1003854,
+    "val_tokens": 111540,
+    "seq_len": 512,
+    "vocab_size": 256
+  },
+  "env": {
+    "seed": 1337,
+    "threads": 16,
+    "warn_only": false,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "deterministic_algorithms": true,
+    "cublas_workspace_config": ":4096:8",
+    "torch_version": "2.14.1+cpu",
+    "device": "cpu"
+  },
+  "ablation": {
+    "no_muon": false,
+    "no_gram_ns": false
+  },
+  "sample": "ROMEO:A\norewlet\u0013h o hh st\u0013\u0013 igdn  n\n\nI :A  edde e h o e\u0007  or  hrl\u0013 n  seer  \u0013or a s\nBe\nte ih aige\u0007\u0007:ae\u0013r ad\u0007\u0007\u0013ee t\u0007 \u0013\u0013itee  \u0013 \u0000\u0013\u0013\u0007eo i h ralo t hY Yu ea l eoliesl\u0000 rrtrre swrel\u0000\u0000 \u0013\u0013hn\u0013\u0013\u0013 o i eeh  ad  i\u0000tte "
+}
