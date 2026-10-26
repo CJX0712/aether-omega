@@ -11,10 +11,12 @@ env/
 .ipynb_checkpoints/
 
 # 训练产物（可复现，无需入库）
-checkpoints/
+# 例外：保留一个已训练好的 nano checkpoint（55MB），让第三方 clone 后无需训练
+# 即可直接运行 scripts/infer.py 演示推理 / KV-cache 验证。其余权重仍忽略。
 runs/
 logs/
 *.pt
+!checkpoints/aether-nano-s1337.pt
 *.pth
 *.ckpt
 

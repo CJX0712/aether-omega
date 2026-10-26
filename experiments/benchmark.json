@@ -1,0 +1,80 @@
+{
+  "torch_version": "2.14.1+cpu",
+  "device": "cpu",
+  "newton_schulz": [
+    {
+      "shape": [
+        256,
+        512
+      ],
+      "original_ms": 4.52,
+      "gram_ms": 3.52,
+      "speedup_pct": 22.1,
+      "max_abs_dev": 6.258487701416016e-07
+    },
+    {
+      "shape": [
+        512,
+        1024
+      ],
+      "original_ms": 23.896,
+      "gram_ms": 20.919,
+      "speedup_pct": 12.5,
+      "max_abs_dev": 6.109476089477539e-07
+    },
+    {
+      "shape": [
+        768,
+        3072
+      ],
+      "original_ms": 142.546,
+      "gram_ms": 94.283,
+      "speedup_pct": 33.9,
+      "max_abs_dev": 4.246830940246582e-07
+    },
+    {
+      "shape": [
+        1024,
+        4096
+      ],
+      "original_ms": 384.647,
+      "gram_ms": 197.623,
+      "speedup_pct": 48.6,
+      "max_abs_dev": 3.501772880554199e-07
+    }
+  ],
+  "kv_cache": [
+    {
+      "preset": "nano",
+      "n_heads": 8,
+      "mla_per_token": 48,
+      "gqa_per_token": 256,
+      "mha_per_token": 1024,
+      "mla_vs_mha": 21.33,
+      "mla_vs_gqa": 5.33
+    },
+    {
+      "preset": "micro",
+      "n_heads": 8,
+      "mla_per_token": 68,
+      "gqa_per_token": 320,
+      "mha_per_token": 1280,
+      "mla_vs_mha": 18.82,
+      "mla_vs_gqa": 4.71
+    },
+    {
+      "preset": "base",
+      "n_heads": 12,
+      "mla_per_token": 128,
+      "gqa_per_token": 768,
+      "mha_per_token": 3072,
+      "mla_vs_mha": 24.0,
+      "mla_vs_gqa": 6.0
+    }
+  ],
+  "inference": {
+    "prefill_ms": 30.1,
+    "decode_32_ms": 320.5,
+    "ms_per_token": 10.02
+  }
+}

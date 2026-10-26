@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="Menlo, Consolas, monospace">
+<rect width="880" height="480" fill="#ffffff"/>
+<text x="440" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#111">AETHER-Ω 训练曲线 · nano 档</text>
+<line x1="64" y1="54.0" x2="816" y2="54.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="56" y="58.0" text-anchor="end" font-size="11" fill="#444">6.72</text>
+<line x1="64" y1="130.0" x2="816" y2="130.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="56" y="134.0" text-anchor="end" font-size="11" fill="#444">5.70</text>
+<line x1="64" y1="206.0" x2="816" y2="206.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="56" y="210.0" text-anchor="end" font-size="11" fill="#444">4.68</text>
+<line x1="64" y1="282.0" x2="816" y2="282.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="56" y="286.0" text-anchor="end" font-size="11" fill="#444">3.66</text>
+<line x1="64" y1="358.0" x2="816" y2="358.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="56" y="362.0" text-anchor="end" font-size="11" fill="#444">2.64</text>
+<line x1="64" y1="434.0" x2="816" y2="434.0" stroke="#e3e8ee" stroke-width="1"/>
+<text x="56" y="438.0" text-anchor="end" font-size="11" fill="#444">1.62</text>
+<text x="824" y="58.0" text-anchor="start" font-size="11" fill="#c2410c">501</text>
+<text x="824" y="134.0" text-anchor="start" font-size="11" fill="#c2410c">401</text>
+<text x="824" y="210.0" text-anchor="start" font-size="11" fill="#c2410c">301</text>
+<text x="824" y="286.0" text-anchor="start" font-size="11" fill="#c2410c">201</text>
+<text x="824" y="362.0" text-anchor="start" font-size="11" fill="#c2410c">101</text>
+<text x="824" y="438.0" text-anchor="start" font-size="11" fill="#c2410c">1</text>
+<text x="64.0" y="454" text-anchor="middle" font-size="11" fill="#444">0</text>
+<text x="189.3" y="454" text-anchor="middle" font-size="11" fill="#444">200</text>
+<text x="314.7" y="454" text-anchor="middle" font-size="11" fill="#444">400</text>
+<text x="440.0" y="454" text-anchor="middle" font-size="11" fill="#444">600</text>
+<text x="565.3" y="454" text-anchor="middle" font-size="11" fill="#444">799</text>
+<text x="690.7" y="454" text-anchor="middle" font-size="11" fill="#444">999</text>
+<text x="816.0" y="454" text-anchor="middle" font-size="11" fill="#444">1199</text>
+<text x="18" y="244.0" text-anchor="middle" font-size="12" fill="#444" transform="rotate(-90 18 244.0)">loss</text>
+<text x="862" y="244.0" text-anchor="middle" font-size="12" fill="#c2410c" transform="rotate(90 862 244.0)">perplexity</text>
+<text x="440.0" y="470" text-anchor="middle" font-size="12" fill="#444">training step</text>
+<path d="M 64.0,91.1 L 126.7,250.9 L 189.4,345.0 L 252.2,370.7 L 314.9,382.3 L 377.6,388.2 L 440.3,394.6 L 503.0,399.1 L 565.8,403.8 L 628.5,408.4 L 691.2,414.8 L 753.9,418.2 L 816.0,420.6" fill="none" stroke="#2563eb" stroke-width="2" stroke-linejoin="round" opacity="0.85"/>
+<path d="M 64.0,91.7 L 126.7,337.0 L 252.2,361.5 L 314.9,375.7 L 440.3,378.8 L 503.0,378.6 L 628.5,383.7 L 691.2,380.9 L 816.0,378.9" fill="none" stroke="#dc2626" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M 64.0,54.0 L 126.7,420.6 L 252.2,424.6 L 314.9,426.3 L 440.3,426.7 L 503.0,426.7 L 628.5,427.2 L 691.2,426.9 L 816.0,426.7" fill="none" stroke="#c2410c" stroke-width="1.6" stroke-dasharray="5 4" stroke-linejoin="round"/>
+<circle cx="64.0" cy="91.7" r="3" fill="#dc2626"/>
+<circle cx="126.7" cy="337.0" r="3" fill="#dc2626"/>
+<circle cx="252.2" cy="361.5" r="3" fill="#dc2626"/>
+<circle cx="314.9" cy="375.7" r="3" fill="#dc2626"/>
+<circle cx="440.3" cy="378.8" r="3" fill="#dc2626"/>
+<circle cx="503.0" cy="378.6" r="3" fill="#dc2626"/>
+<circle cx="628.5" cy="383.7" r="3" fill="#dc2626"/>
+<circle cx="691.2" cy="380.9" r="3" fill="#dc2626"/>
+<circle cx="816.0" cy="378.9" r="3" fill="#dc2626"/>
+<text x="816.0" y="370.9" text-anchor="end" font-size="11" fill="#dc2626">val 2.363</text>
+<text x="816.0" y="440.7" text-anchor="end" font-size="11" fill="#c2410c">ppl 10.6</text>
+<rect x="78" y="60" width="170" height="64" fill="#ffffff" stroke="#ccc" rx="4"/>
+<line x1="86" y1="70" x2="108" y2="70" stroke="#2563eb" stroke-width="2"/>
+<text x="114" y="74" font-size="11" fill="#333">train loss</text>
+<line x1="86" y1="88" x2="108" y2="88" stroke="#dc2626" stroke-width="2.4"/>
+<text x="114" y="92" font-size="11" fill="#333">val loss</text>
+<line x1="86" y1="106" x2="108" y2="106" stroke="#c2410c" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="114" y="110" font-size="11" fill="#333">val perplexity</text>
+</svg>

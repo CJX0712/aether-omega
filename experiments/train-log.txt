@@ -10,3 +10,39 @@ AETHER-Ω 训练 · 档位 nano
 ------------------------------------------------------------------------
   step     0/1200  loss 6.2249  |∇| 7.128✂  MoE负载 2.03
     ↳ val_loss 6.2167  ppl 501.06  (best 6.2167)
+  step   100/1200  loss 3.1382  |∇| 0.565   MoE负载 3.21
+    ↳ val_loss 2.9249  ppl 18.63  (best 2.9249)
+  step   200/1200  loss 2.5170  |∇| 0.739   MoE负载 1.36
+  step   300/1200  loss 2.3470  |∇| 0.635   MoE负载 1.22
+    ↳ val_loss 2.5969  ppl 13.42  (best 2.5969)
+  step   400/1200  loss 2.2728  |∇| 0.608   MoE负载 1.13
+    ↳ val_loss 2.4061  ppl 11.09  (best 2.4061)
+  step   500/1200  loss 2.2602  |∇| 0.524   MoE负载 1.11
+  step   600/1200  loss 2.1856  |∇| 0.574   MoE负载 1.10
+    ↳ val_loss 2.3646  ppl 10.64  (best 2.3646)
+  step   700/1200  loss 2.0021  |∇| 0.533   MoE负载 1.06
+    ↳ val_loss 2.3669  ppl 10.66  (best 2.3646)
+  step   800/1200  loss 1.9730  |∇| 0.501   MoE负载 1.08
+  step   900/1200  loss 1.9157  |∇| 0.518   MoE负载 1.04
+    ↳ val_loss 2.2985  ppl 9.96  (best 2.2985)
+  step  1000/1200  loss 1.8412  |∇| 0.586   MoE负载 1.04
+    ↳ val_loss 2.3365  ppl 10.34  (best 2.2985)
+  step  1100/1200  loss 2.0223  |∇| 0.656   MoE负载 1.05
+  step  1199/1200  loss 1.7460  |∇| 0.649   MoE负载 1.03
+    ↳ val_loss 2.3634  ppl 10.63  (best 2.2985)
+------------------------------------------------------------------------
+生成样本（prompt='ROMEO:'）：
+ROMEO:Al ee lat
+hnor h sadbe o nv,wrn ashoe hse esadstl:w er i otehnd
+sevr o oreay o ecee n i il;adeig,t yu,aad etrmnsi,I
+ode hmn oe ite nauhs nwkd.
+Iwshd o oea hs ried o oeseprbai hnge?D  i il;A
+ad oiede h
+------------------------------------------------------------------------
+  耗时          : 2977.11s  (0.403 steps/s)
+  最佳 val loss : 2.2985  ppl 9.96
+  QK-clip 触发  : 2 次
+  权重指纹      : 0fb9b36c51ca53f4
+  checkpoint    : checkpoints\aether-nano-s1337.pt
+  训练报告      : experiments\train-nano-report.json
+========================================================================
