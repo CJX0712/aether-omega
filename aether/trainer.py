@@ -154,6 +154,7 @@ class Trainer:
         base_muon, base_adamw = self.ocfg.lr_muon, self.ocfg.lr_adamw
         t0 = time.perf_counter()
         running = 0.0
+        loss_count = 0  # 当前窗口内已累加的 micro-batch 数（用于正确的平均 loss）
 
         for step in range(t.max_steps):
             capture = (step % self.capture_every == 0) or (
@@ -184,12 +185,13 @@ class Trainer:
             self._set_phase(False)
 
             running += float(out["loss"].detach())
+            loss_count += 1
             if verbose and (step % t.log_every == 0 or step == t.max_steps - 1):
                 rec = self._runtime_certificates(step, gnorm)
                 rec.update(
                     {
                         "step": step,
-                        "train_loss": running / (step % t.log_every + 1) if step % t.log_every == 0 else None,
+                        "train_loss": running / loss_count,
                         "lr_scale": scale,
                         "grad_clipped": gnorm > self.ocfg.grad_clip if self.ocfg.grad_clip > 0 else False,
                     }
@@ -202,6 +204,7 @@ class Trainer:
                     flush=True,
                 )
                 running = 0.0
+                loss_count = 0
 
             if step % t.eval_every == 0 or step == t.max_steps - 1:
                 v = self.evaluate()

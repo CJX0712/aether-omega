@@ -47,7 +47,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--no-muon", action="store_true", help="消融：所有参数走 AdamW")
     p.add_argument("--no-gram-ns", action="store_true", help="消融：用原版 Newton-Schulz")
     p.add_argument("--eval-every", type=int, default=150)
-    p.add_argument("--log-every", type=int, default=25)
+    p.add_argument("--log-every", type=int, default=100)
     p.add_argument("--grad-accum", type=int, default=None)
     p.add_argument("--sample", action="store_true", default=True)
     p.add_argument("--out", default="experiments")
