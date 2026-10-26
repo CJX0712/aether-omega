@@ -169,11 +169,15 @@ class Trainer:
                 out = m(x, y)
                 (out["loss"] / t.grad_accum_steps).backward()
 
+            # 必须在 step() 之前采集：step 之后立刻 zero_grad，梯度归零。
+            # 而且必须采集**裁剪前**的范数——clip 之后范数恒等于阈值，
+            # 曲线会变成一条毫无信息量的水平线（这个坑在开发中真实踩过：
+            # 日志里 |∇| 恒为 1.000，看起来"很稳定"，其实什么都没说明）。
             if self.ocfg.grad_clip > 0:
-                torch.nn.utils.clip_grad_norm_(m.parameters(), self.ocfg.grad_clip)
-
-            # 必须在 step() 之前采集：step 之后立刻 zero_grad，梯度归零
-            gnorm = self.grad_norm()
+                # clip_grad_norm_ 返回的是**裁剪前**的总范数，正好是我们要的信号
+                gnorm = float(torch.nn.utils.clip_grad_norm_(m.parameters(), self.ocfg.grad_clip))
+            else:
+                gnorm = self.grad_norm()
             self._maybe_muon_clip(step)
             self.opt.step()
             self.opt.zero_grad(set_to_none=True)
@@ -187,12 +191,13 @@ class Trainer:
                         "step": step,
                         "train_loss": running / (step % t.log_every + 1) if step % t.log_every == 0 else None,
                         "lr_scale": scale,
+                        "grad_clipped": gnorm > self.ocfg.grad_clip if self.ocfg.grad_clip > 0 else False,
                     }
                 )
                 self.history.append(rec)
                 print(
                     f"  step {step:5d}/{t.max_steps}  loss {float(out['loss'].detach()):.4f}"
-                    f"  |∇| {rec['grad_norm']:.3f}"
+                    f"  |∇| {rec['grad_norm']:.3f}{'✂' if rec['grad_clipped'] else ' '}"
                     + (f"  MoE负载 {rec['moe_max_load_ratio']:.2f}" if "moe_max_load_ratio" in rec else ""),
                     flush=True,
                 )
